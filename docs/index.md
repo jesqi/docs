@@ -1,13 +1,10 @@
-# Introduction
+# AGNTCY Origins
 
-The AGNTCY is an open source collective building the infrastructure for The Internet of Agents (IoA): an open, interoperable internet for agent to agent collaboration.
+AGNTCY began with Outshift by Cisco's vision of an [Internet of Agents](https://outshift.cisco.com/the-internet-of-agents)—recognizing that AI agents were being built in isolated silos, unable to collaborate across organizational boundaries. Their foundational white paper identified the critical infrastructure gap preventing agents from working together at scale.
 
-The IoA represents a transformative initiative in the field
-of artificial intelligence designed to create a standardized ecosystem for AI
-agent discovery, interconnection, and collaboration. This comprehensive
-framework addresses the growing need for interoperability and secure
-communication between AI agents developed across different frameworks and
-platforms.
+What started as a concept became reality in March 2025 when Outshift launched AGNTCY on GitHub with complete code, specifications, and services, alongside Galileo and LangChain as core maintainers. They built the discovery, identity, messaging, and observability components that agents need to find each other, verify their capabilities, and collaborate securely.
+
+By July 2025, over 75 companies had joined the effort, leading to AGNTCY's donation to the Linux Foundation with Cisco, Dell Technologies, Google Cloud, Oracle, and Red Hat as formative members. What began as one company's vision became the community-owned infrastructure for the Internet of Agents. 
 
 ## Vision
 
@@ -44,29 +41,27 @@ The initial set of IoA components and architecture is outlined below. This is a 
 1. **Open Agent Schema Framework (OASF)**: An OCI based extensible data model allowing to describe agents' attributes and ensuring unique identification of agents. Current OASF repo can be found [here](https://github.com/agntcy/oasf), OASF schema documentation can be found [here](https://schema.oasf.agntcy.org).
 1. **Agent Directory**: Allows to announce and discover agents or multi-agent applications. Any organization can run its directory and keep it in sync with others, forming the Internet of Agents inventory.
 1. **Agent Manifest**: A standard format to describes agents, their capabilities, their dependencies, and how to deploy or consume them. The manifest is designed to be used by ACP and the Workflow Server and stored in the Agent Directory with the corresponding OASF extensions.
-1. **Semantic SDK**: 
-    * **I/O Mapper Agent**: Handles semantic data adaptations between agents that need to communicate with each other.
-    * **Semantic Router**: Directs workflows via semantic matches. (coming soon)
+1. **Semantic SDK**:
+   - **I/O Mapper Agent**: Handles semantic data adaptations between agents that need to communicate with each other.
+   - **Semantic Router**: Directs workflows via semantic matches. (coming soon)
 1. **Syntactic SDK**:
-    * **Agent Connect Protocol (ACP)**: A standard interface to invoke agents (or agentic applications), provide input, retrieve output, retrieve supported schemas, graph topology and other useful information. Current ACP spec can be found [here](https://spec.acp.agntcy.org/).
-    * **API-bridge Agent** to connect an Agent with any API end-point (tools or data sources)
-    * **Human in the Loop Agent** to interface with human input/output seamlessly. (coming soon)
+   - **Agent Connect Protocol (ACP)**: A standard interface to invoke agents (or agentic applications), provide input, retrieve output, retrieve supported schemas, graph topology and other useful information. Current ACP spec can be found [here](https://spec.acp.agntcy.org/).
+   - **API-bridge Agent** to connect an Agent with any API end-point (tools or data sources)
+   - **Human in the Loop Agent** to interface with human input/output seamlessly. (coming soon)
 1. **Messaging SDK**:
-    * **Agent Gateway Protocol (AGP)**: A protocol that defines the standards and guidelines for secure and efficient network-level communication between AI agents. AGP ensures interoperability and seamless data exchange by specifying message formats, transport mechanisms, and interaction patterns.
-    * **Agent Gateway**: Offers handy secure (MLS and quantum safe) network-level communication services to a group of agents (typically those of a given multi-agent application) through SDK/Libraries. It extends gRPC to support  pub/sub interactions in addition to request/reply, streaming, fire & forget and more.
-1. **Agent Workflow Server**: Deploys and supervises agent workflows written in various frameworks and makes them available through the Agent Connect Protocol. Such workflows could be multi-agent applications including a mix of toolkit agents, local and remote agents. 
+   - **Agent Gateway Protocol (AGP)**: A protocol that defines the standards and guidelines for secure and efficient network-level communication between AI agents. AGP ensures interoperability and seamless data exchange by specifying message formats, transport mechanisms, and interaction patterns.
+   - **Agent Gateway**: Offers handy secure (MLS and quantum safe) network-level communication services to a group of agents (typically those of a given multi-agent application) through SDK/Libraries. It extends gRPC to support  pub/sub interactions in addition to request/reply, streaming, fire & forget and more.
+1. **Agent Workflow Server**: Deploys and supervises agent workflows written in various frameworks and makes them available through the Agent Connect Protocol. Such workflows could be multi-agent applications including a mix of toolkit agents, local and remote agents.
 1. **Agentic Ensemble Observability & Evaluation**: Telemetry collectors, tools and services to enable multi-agent application observability and evaluation
-1. **Agentic Ensemble Security**: Tools and services to trust and  protect multi-agent applications.
-
+1. **Agentic Ensemble Security**: Tools and services to trust and protect multi-agent applications.
 
 The following diagram shows a simplified architecture of the core components described above.
-
 
 ![IoA Arch](assets/ioa_arch.png)
 
 ## Benefits
 
-* **Enhanced Collaboration**: By enabling seamless communication and data exchange, IoA fosters collaboration between AI agents, leading to more sophisticated and integrated solutions.
-* **Improved Efficiency**: Standardized protocols and frameworks reduce the complexity of integrating diverse AI agents, resulting in faster development and deployment of AI-driven applications.
-* **Increased Security**: Robust security mechanisms ensure that interactions between agents are secure, protecting sensitive data, and preventing unauthorized access.
-* **Future-Proof Architecture**: The scalable and flexible design of IoA ensures that the ecosystem can grow and adapt to future advancements in AI technology.
+- **Enhanced Collaboration**: By enabling seamless communication and data exchange, IoA fosters collaboration between AI agents, leading to more sophisticated and integrated solutions.
+- **Improved Efficiency**: Standardized protocols and frameworks reduce the complexity of integrating diverse AI agents, resulting in faster development and deployment of AI-driven applications.
+- **Increased Security**: Robust security mechanisms ensure that interactions between agents are secure, protecting sensitive data, and preventing unauthorized access.
+- **Future-Proof Architecture**: The scalable and flexible design of IoA ensures that the ecosystem can grow and adapt to future advancements in AI technology.
